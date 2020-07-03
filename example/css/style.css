@@ -1,0 +1,14 @@
+.lang-select.active{
+    position: fixed; /* 要素の位置を固定する */
+    bottom: 0; /* 基準の位置を画面の一番下に指定する */
+    left: 0;
+    width: 100%;
+    padding-top: 3vh;
+    padding-left: 10vh;
+    padding-bottom: 3vh;
+    background-color: cadetblue;
+}
+
+.lang-select .message {
+    color: white;
+}

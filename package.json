@@ -1,0 +1,23 @@
+{
+  "name": "lang-select",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appleple/lang-select.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/appleple/lang-select/issues"
+  },
+  "homepage": "https://github.com/appleple/lang-select#readme",
+  "devDependencies": {
+    "typescript": "^3.9.6"
+  }
+}
