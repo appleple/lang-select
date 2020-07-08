@@ -4,8 +4,8 @@ var LangSelect = /** @class */ (function () {
     function LangSelect(id, info_list) {
         this.id = id; // id格納
         this.info_list = info_list; // Map配列格納
-        if (this.chack_browser_cookiy() == false) { // ブラウザに前回拒否したことを示すクッキーが埋め込まれていない
-            var prop = this.chack_info_list(); // info_listからユーザの第一言語と一致するプロパティを取り出す
+        if (this.check_browser_cookie() == false) { // ブラウザに前回拒否したことを示すクッキーが埋め込まれていない
+            var prop = this.check_info_list(); // info_listからユーザの第一言語と一致するプロパティを取り出す
             if (prop != null) { // nullで無ければ
                 this.recommend_site_change(prop); // サイトの変更を提案するHTMLを表示する
             }
@@ -24,7 +24,7 @@ var LangSelect = /** @class */ (function () {
     };
     // ブラウザの第一言語が一致するプロパティがあるかどうかを探索する
     // 一致するプロパティがあった場合はそのプロパティを、無い場合はnullを返す
-    LangSelect.prototype.chack_info_list = function () {
+    LangSelect.prototype.check_info_list = function () {
         for (var _i = 0, _a = this.info_list; _i < _a.length; _i++) {
             var info = _a[_i];
             // navigator.language.split("-")[0]は言語コードと国コードが連結されている場合に言語コードのみを取り出す処理
@@ -36,7 +36,7 @@ var LangSelect = /** @class */ (function () {
     };
     // ブラウザのクッキーの有無を確認するメソッド
     // クッキー(LangSelectRejectRecomend)があればtrue，無ければfalse
-    LangSelect.prototype.chack_browser_cookiy = function () {
+    LangSelect.prototype.check_browser_cookie = function () {
         var cookie_list = document.cookie; // 保存されているクッキー読み出し
         var cookies = cookie_list.split(';'); // ;で分割し配列cookiesに格納
         for (var _i = 0, cookies_1 = cookies; _i < cookies_1.length; _i++) {
@@ -49,7 +49,7 @@ var LangSelect = /** @class */ (function () {
     };
     // ブラウザにクッキーを埋め込むメソッド
     // 現在は有効期限1分になっています
-    LangSelect.prototype.embedding_cookiy = function () {
+    LangSelect.prototype.embedding_cookie = function () {
         var now = new Date();
         now.setMinutes(now.getMinutes() + 1);
         document.cookie = "LangSelectRejectRecomend=true;expires=" + now.toUTCString() + ";Path=/"; // クッキーはサイト全体で有効
@@ -64,7 +64,7 @@ var LangSelect = /** @class */ (function () {
     };
     // 提案の消去ボタンが押されたとき呼び出されるメソッド
     LangSelect.prototype.reject_recomend_event = function () {
-        this.embedding_cookiy(); // クッキーを埋め込む
+        this.embedding_cookie(); // クッキーを埋め込む
         this.remove_lang_select(); // 提案HTMLを削除
     };
     return LangSelect;

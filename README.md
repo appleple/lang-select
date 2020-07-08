@@ -24,7 +24,7 @@ Write "div tag" and "javascript".
 
 If a visitor is browsing the site written in not his/her first language and LangSelect instance has "url" of his/her first language, "div tag" becomes as below.
 ```html
-<div id="foge">
+<div class="active" id="foge">
   <div class="message">
 	<p>message</p>
   </div>
@@ -32,7 +32,7 @@ If a visitor is browsing the site written in not his/her first language and Lang
 	<button onclick="http://example.com">message on button</button>
   </div>
   <div class="reject-message">
-	<button>×</button>
+	<button></button>
   </div>
 </div>
 ```
@@ -60,7 +60,7 @@ If a visitor is browsing the site written in not visitor's first language and he
 	<button onclick="ユーザが入力した遷移先">クリック</button>
   </div>
   <div class="reject-message">
-	<button>×</button>
+	<button></button>
   </div>
 </div>
 ```

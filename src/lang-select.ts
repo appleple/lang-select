@@ -14,8 +14,8 @@ class LangSelect {
     public constructor(id: string, info_list: Lang_Info[]) {
         this.id = id;               // id格納
         this.info_list = info_list; // Map配列格納
-        if (this.chack_browser_cookiy()==false) {                   // ブラウザに前回拒否したことを示すクッキーが埋め込まれていない
-            const prop: Lang_Info | null = this.chack_info_list();  // info_listからユーザの第一言語と一致するプロパティを取り出す
+        if (this.check_browser_cookie()==false) {                   // ブラウザに前回拒否したことを示すクッキーが埋め込まれていない
+            const prop: Lang_Info | null = this.check_info_list();  // info_listからユーザの第一言語と一致するプロパティを取り出す
             if (prop!=null) {                      // nullで無ければ
                 this.recommend_site_change(prop);  // サイトの変更を提案するHTMLを表示する
             }
@@ -46,7 +46,7 @@ class LangSelect {
 
     // ブラウザの第一言語が一致するプロパティがあるかどうかを探索する
     // 一致するプロパティがあった場合はそのプロパティを、無い場合はnullを返す
-    private chack_info_list(): Lang_Info | null {
+    private check_info_list(): Lang_Info | null {
         for (let info of this.info_list) {
             // navigator.language.split("-")[0]は言語コードと国コードが連結されている場合に言語コードのみを取り出す処理
             if (info["lang"]==navigator.language.split("-")[0]) {
@@ -58,7 +58,7 @@ class LangSelect {
 
     // ブラウザのクッキーの有無を確認するメソッド
     // クッキー(LangSelectRejectRecomend)があればtrue，無ければfalse
-    private chack_browser_cookiy(): boolean {
+    private check_browser_cookie(): boolean {
         const cookie_list: string = document.cookie;      // 保存されているクッキー読み出し
         const cookies: string[] = cookie_list.split(';'); // ;で分割し配列cookiesに格納
 
@@ -72,7 +72,7 @@ class LangSelect {
 
     // ブラウザにクッキーを埋め込むメソッド
     // 現在は有効期限1分になっています
-    private embedding_cookiy(): void {
+    private embedding_cookie(): void {
         const now = new Date();
         now.setMinutes(now.getMinutes() + 1);
         document.cookie = "LangSelectRejectRecomend=true;expires="+now.toUTCString()+";Path=/"; // クッキーはサイト全体で有効
@@ -89,7 +89,7 @@ class LangSelect {
 
     // 提案の消去ボタンが押されたとき呼び出されるメソッド
     public reject_recomend_event(): void {
-        this.embedding_cookiy();   // クッキーを埋め込む
+        this.embedding_cookie();   // クッキーを埋め込む
         this.remove_lang_select(); // 提案HTMLを削除
     }
 }
