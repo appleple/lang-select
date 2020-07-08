@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lang-select サンプル</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/lang-select.js"></script>
+</head>
+<body>
+    <div id="header">
+		<div class="container">
+			<h1>lang-select.js</h1>
+			<p>言語に合わせてページ遷移タブを表示するJavaScriptプログラム</p>
+			<button onclick="location.href='https://github.com/appleple/lang-select'">View on GitHub</button>
+		</div>
+	</div>
+    
+    <!--lang-select-->
+    <div id="foo"></div>
+</body>
+<script>
+    window.addEventListener('DOMContentLoaded', function(){
+	new LangSelect("foo", [
+		{"lang": "en", "url": "../en/index.html", "message": "Site for English", "btn_message": "click"},
+    ])});
+</script>
+</html>
