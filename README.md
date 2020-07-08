@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/appleple/document-outliner/master/LICENSE)
 
-A utility to suggest page transition when visitor is browsing the site written in not visitor's first language. 
+A utility to suggest page transition when a visitor is browsing the site written in not his/her first language. 
 
 ## Usage
 ```html
@@ -10,6 +10,35 @@ A utility to suggest page transition when visitor is browsing the site written i
 ```
 
 Write "div tag" and "javascript".
+```html
+<div id="foge"></div>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', function(){
+	new LangSelect("foo", [
+        {"lang": "language", "url": "http://example.com", "message": "message", "btn_message": "message on button"},
+    ])});
+</script>
+```
+
+If a visitor is browsing the site written in not his/her first language and LangSelect instance has "url" of his/her first language, "div tag" become as below.
+```html
+<div id="foge">
+  <div class="message">
+	<p>message</p>
+  </div>
+  <div class="change-site">
+	<button onclick="http://example.com">message on button</button>
+  </div>
+  <div class="reject-message">
+	<button>×</button>
+  </div>
+</div>
+```
+
+## Example
+
 ```html
 <div id="foge"></div>
 
@@ -21,18 +50,17 @@ Write "div tag" and "javascript".
 </script>
 ```
 
-If visitor is browsing the site written in not visitor's first language, "div tag" become as below.
+If a visitor is browsing the site written in not visitor's first language and he/she is Japanease, "div tag" become as below.
 ```html
 <div id="foge">
-	<div class="message">
-		<p>日本向けサイトがあります</p>
-	</div>
-	<div class="change-site">
-		<button onclick="ユーザが入力した遷移先">クリック</button>
-	</div>
-	<div class="reject-message">
-		<button onclick="../ja/index.html">×</button>
-	</div>
+  <div class="message">
+	<p>日本向けサイトがあります</p>
+  </div>
+  <div class="change-site">
+	<button onclick="ユーザが入力した遷移先">クリック</button>
+  </div>
+  <div class="reject-message">
+	<button>×</button>
+  </div>
 </div>
 ```
-
