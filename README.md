@@ -3,6 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/appleple/document-outliner/master/LICENSE)
 
 A utility to suggest page transition when a visitor is browsing the site written in not his/her first language. 
+[http://tajima.appleple.jp/sample/LangSelect/example/en/](http://tajima.appleple.jp/sample/LangSelect/example/en/)
 
 ## Usage
 ```html
