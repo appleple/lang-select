@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lang-select sample</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/lang-select.js"></script>
+</head>
+<body>
+    <div id="header">
+		<div class="container">
+			<h1>lang-select.js</h1>
+			<p>JavaScript program makes tab to change sites for languages.</p>
+			<button onclick="location.href='https://github.com/appleple/lang-select'">View on GitHub</button>
+		</div>
+    </div>
+    
+    <p>top-page</p>
+    
+    <!--lang-select-->
+    <div id="foo"></div>
+</body>
+<script>
+    console.log(document.cookie);
+    window.addEventListener('DOMContentLoaded', function(){
+	new LangSelect("foo", [
+        {"lang": "ja", "url": "../ja/index.html", "message": "日本向けサイトがあります", "btn_message": "クリック"},
+    ])});
+</script>
+</html>

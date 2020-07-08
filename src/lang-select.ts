@@ -70,11 +70,11 @@ class LangSelect {
     }
 
     // ブラウザにクッキーを埋め込むメソッド
-    // 現在は有効期限5分になっています
+    // 現在は有効期限1分になっています
     private embedding_cookiy(): void {
         const now = new Date();
-        now.setMinutes(now.getMinutes() + 5);
-        document.cookie = "LangSelectRejectRecomend=true;expires="+now.toUTCString();
+        now.setMinutes(now.getMinutes() + 1);
+        document.cookie = "LangSelectRejectRecomend=true;expires="+now.toUTCString()+";Path=/"; // クッキーはサイト全体で有効
     }
 
     // 表示されているhtmlを除去するメソッド

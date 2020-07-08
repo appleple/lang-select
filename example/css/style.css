@@ -6,13 +6,14 @@
     padding-top: 10px;
     padding-left: 30vw;
     padding-bottom: 10px;
-    background-color: cadetblue;
+    background-color: slategrey;
 }
 
 #foo .message {
     float: left;
     color: white;
     margin-right: 100px;
+    text-align: left;
 }
 
 #foo .change-site {
@@ -24,4 +25,21 @@
 
 #foo .reject-message {
     padding-top: 16px;
+}
+
+body {
+    text-align: center;
+    margin: 0;
+}
+
+#header {
+    background-color: slategrey;
+    color: white;
+}
+#header h1{
+    margin-top: 0;
+    padding-top: 10px;
+}
+#header button{
+    margin-bottom: 10px;
 }
