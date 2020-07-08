@@ -1,14 +1,27 @@
-.lang-select.active{
+#foo.active{
     position: fixed; /* 要素の位置を固定する */
     bottom: 0; /* 基準の位置を画面の一番下に指定する */
     left: 0;
     width: 100%;
-    padding-top: 3vh;
-    padding-left: 10vh;
-    padding-bottom: 3vh;
+    padding-top: 10px;
+    padding-left: 30vw;
+    padding-bottom: 10px;
     background-color: cadetblue;
 }
 
-.lang-select .message {
+#foo .message {
+    float: left;
     color: white;
+    margin-right: 100px;
+}
+
+#foo .change-site {
+    float: left;
+    display: block;
+    padding-top: 16px;
+    margin-right: 10px;
+}
+
+#foo .reject-message {
+    padding-top: 16px;
 }
