@@ -22,7 +22,7 @@ Write "div tag" and "javascript".
 </script>
 ```
 
-If a visitor is browsing the site written in not his/her first language and LangSelect instance has "url" of his/her first language, "div tag" become as below.
+If a visitor is browsing the site written in not his/her first language and LangSelect instance has "url" of his/her first language, "div tag" becomes as below.
 ```html
 <div id="foge">
   <div class="message">
@@ -50,7 +50,7 @@ If a visitor is browsing the site written in not his/her first language and Lang
 </script>
 ```
 
-If a visitor is browsing the site written in not visitor's first language and he/she is Japanease, "div tag" become as below.
+If a visitor is browsing the site written in not visitor's first language and he/she use Japanease, "div tag" becomes as below.
 ```html
 <div id="foge">
   <div class="message">
