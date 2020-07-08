@@ -36,8 +36,9 @@ class LangSelect {
     <a href=${prop["url"]}>${prop["btn_message"]}</a>
 </div>
 <div class=\"reject-message\">
-    <button>×</button>
+    <button></button>
 </div>`);
+        // buttonの値とデザインを変えられるようにした方がいいかも
 
         const div_change_site: HTMLDivElement | undefined = div_lang_select?.getElementsByTagName("div")[2]; // reject-messageのDOMを抽出
         div_change_site?.addEventListener('click', ()=>{this.reject_recomend_event()}); // clickイベント this.reject_recomend_eventを追加

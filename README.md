@@ -17,7 +17,7 @@ Write "div tag" and "javascript".
 <script>
     window.addEventListener('DOMContentLoaded', function(){
 	new LangSelect("foo", [
-        {"lang": "language", "url": "http://example.com", "message": "message", "btn_message": "message on button"},
+        {"lang": "language code of ISO 639", "url": "http://example.com", "message": "message", "btn_message": "message on button"},
     ])});
 </script>
 ```

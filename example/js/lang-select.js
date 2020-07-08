@@ -17,7 +17,8 @@ var LangSelect = /** @class */ (function () {
         var div_lang_select = document.getElementById(this.id); // id名で要素を抽出
         div_lang_select === null || div_lang_select === void 0 ? void 0 : div_lang_select.classList.add("active"); // 抽出したdivにactive属性を追加
         // HTML挿入
-        div_lang_select === null || div_lang_select === void 0 ? void 0 : div_lang_select.insertAdjacentHTML("afterbegin", "<div class=\"message\">\n    <p>" + prop["message"] + "</p>\n</div>\n<div class=\"change-site\">\n    <a href=" + prop["url"] + ">" + prop["btn_message"] + "</a>\n</div>\n<div class=\"reject-message\">\n    <button>\u00D7</button>\n</div>");
+        div_lang_select === null || div_lang_select === void 0 ? void 0 : div_lang_select.insertAdjacentHTML("afterbegin", "<div class=\"message\">\n    <p>" + prop["message"] + "</p>\n</div>\n<div class=\"change-site\">\n    <a href=" + prop["url"] + ">" + prop["btn_message"] + "</a>\n</div>\n<div class=\"reject-message\">\n    <button></button>\n</div>");
+        // buttonの値とデザインを変えられるようにした方がいいかも
         var div_change_site = div_lang_select === null || div_lang_select === void 0 ? void 0 : div_lang_select.getElementsByTagName("div")[2]; // reject-messageのDOMを抽出
         div_change_site === null || div_change_site === void 0 ? void 0 : div_change_site.addEventListener('click', function () { _this.reject_recomend_event(); }); // clickイベント this.reject_recomend_eventを追加
     };
