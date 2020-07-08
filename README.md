@@ -23,16 +23,16 @@ Write "div tag" and "javascript".
 
 If visitor is browsing the site written in not visitor's first language, "div tag" become as below.
 ```html
-	<div id="foge">
-		<div class="message">
-			<p>日本向けサイトがあります</p>
-		</div>
-		<div class="change-site">
-			<button onclick="ユーザが入力した遷移先">クリック</button>
-		</div>
-		<div class="reject-message">
-			<button onclick="../ja/index.html">×</button>
-		</div>
-    </div>
+<div id="foge">
+	<div class="message">
+		<p>日本向けサイトがあります</p>
+	</div>
+	<div class="change-site">
+		<button onclick="ユーザが入力した遷移先">クリック</button>
+	</div>
+	<div class="reject-message">
+		<button onclick="../ja/index.html">×</button>
+	</div>
+</div>
 ```
 
