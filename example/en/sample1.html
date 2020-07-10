@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lang-select sample</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/lang-select.js"></script>
+    <script src="../../dist/lang-select.js"></script>
 </head>
 <body>
     <div id="header">
@@ -17,13 +17,11 @@
     </div>
     
     <a href="index.html"><p>go top page</p></a>
-    
-    <!--lang-select-->
-    <div id="foo"></div>
+
 </body>
 <script>
     window.addEventListener('DOMContentLoaded', function(){
-	new LangSelect("foo", [
+	new LangSelect([
         {"lang": "ja", "url": "../ja/index.html", "message": "日本向けサイトがあります", "btn_message": "クリック"},
     ])});
 </script>

@@ -1,4 +1,4 @@
-#foo.active{
+.lang-select{
     position: fixed; /* 要素の位置を固定する */
     bottom: 0; /* 基準の位置を画面の一番下に指定する */
     left: 0;
@@ -10,25 +10,25 @@
     animation: SlideIn 1s;
 }
 
-#foo .message {
+.lang-select .message {
     float: left;
     color: white;
     margin-right: 100px;
     text-align: left;
 }
 
-#foo .change-site {
+.lang-select .change-site {
     float: left;
     display: block;
     padding-top: 16px;
     margin-right: 10px;
 }
 
-#foo .reject-message {
+.lang-select .reject-message {
     padding-top: 16px;
 }
 
-#foo a {
+.lang-select a {
     color: white;
 }
 
@@ -64,7 +64,7 @@ body {
     margin: 0;
 }
 
-#foo button{
+.lang-select button{
     background-color: transparent;
     border: none;
     cursor: pointer;

@@ -7,12 +7,10 @@ type Lang_Info ={
 }
 
 class LangSelect {
-    private id: string;               // 生成されたインスタンスが対象とするDOMのidを格納する変数
     private info_list: Lang_Info[];   // インスタンス生成時に渡されたMapの配列を格納する変数
 
     // コンストラクタメソッド
-    public constructor(id: string, info_list: Lang_Info[]) {
-        this.id = id;               // id格納
+    public constructor(info_list: Lang_Info[]) {
         this.info_list = info_list; // Map配列格納
         if (this.check_browser_cookie()==false) {                   // ブラウザに前回拒否したことを示すクッキーが埋め込まれていない
             const prop: Lang_Info | null = this.check_info_list();  // info_listからユーザの第一言語と一致するプロパティを取り出す
@@ -24,23 +22,25 @@ class LangSelect {
 
     // サイトの変更を提案するHTMLを表示するメソッド
     private recommend_site_change(prop: Lang_Info): void {
-        const div_lang_select: HTMLElement | null = document.getElementById(this.id);  // id名で要素を抽出
-        div_lang_select?.classList.add("active");   // 抽出したdivにactive属性を追加
+        const body: HTMLElement | null = document.getElementsByTagName("body")[0];  // id名で要素を抽出
 
         // HTML挿入
-        div_lang_select?.insertAdjacentHTML("afterbegin", 
-`<div class=\"message\">
-    <p>${prop["message"]}</p>
-</div>
-<div class=\"change-site\">
-    <a href=${prop["url"]}>${prop["btn_message"]}</a>
-</div>
-<div class=\"reject-message\">
-    <button></button>
+        body?.insertAdjacentHTML("afterbegin", 
+`
+<div class="lang-select">
+    <div class=\"message\">
+        <p>${prop["message"]}</p>
+    </div>
+    <div class=\"change-site\">
+        <a href=${prop["url"]}>${prop["btn_message"]}</a>
+    </div>
+    <div class=\"reject-message\">
+        <button></button>
+    </div>
 </div>`);
         // buttonの値とデザインを変えられるようにした方がいいかも
 
-        const div_change_site: HTMLDivElement | undefined = div_lang_select?.getElementsByTagName("div")[2]; // reject-messageのDOMを抽出
+        const div_change_site: HTMLDivElement | undefined = body.getElementsByTagName("div")[2]; // reject-messageのDOMを抽出
         div_change_site?.addEventListener('click', ()=>{this.reject_recomend_event()}); // clickイベント this.reject_recomend_eventを追加
     }   
 
@@ -80,11 +80,10 @@ class LangSelect {
 
     // 表示されているhtmlを除去するメソッド
     private remove_lang_select(): void {
-        const div_lang_select: HTMLElement | null = document.getElementById(this.id);
-        div_lang_select?.classList.remove("active");
+        const body: HTMLElement | null = document.getElementsByTagName("body")[0];
 
         // div class="lang-select"内の子要素を全て削除
-        while (div_lang_select?.firstChild) div_lang_select.removeChild(div_lang_select.firstChild);
+        while (body?.firstChild) body.removeChild(body.firstChild);
     }
 
     // 提案の消去ボタンが押されたとき呼び出されるメソッド

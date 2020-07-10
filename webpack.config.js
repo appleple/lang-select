@@ -21,7 +21,8 @@ module.exports = {
     },
     devServer: {
         // webpack-dev-serverの公開フォルダ
-        contentBase: path.join(__dirname,'example')
+        // 現在ルート
+        contentBase: path.join(__dirname,'/')
     },
     // モジュールに適用するルールの設定（ここではローダーの設定を行う事が多い）
     module: {
