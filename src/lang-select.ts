@@ -25,7 +25,7 @@ class LangSelect {
         const body: HTMLElement | null = document.getElementsByTagName("body")[0];  // id名で要素を抽出
 
         // HTML挿入
-        body?.insertAdjacentHTML("afterbegin", 
+        body?.insertAdjacentHTML("beforeend", 
 `
 <div class="lang-select">
     <div class=\"message\">
