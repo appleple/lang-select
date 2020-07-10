@@ -16,8 +16,8 @@ var LangSelect = /** @class */ (function () {
         var body = document.getElementsByTagName("body")[0]; // id名で要素を抽出
         // HTML挿入
         body === null || body === void 0 ? void 0 : body.insertAdjacentHTML("afterbegin", "\n<div class=\"lang-select\">\n    <div class=\"message\">\n        <p>" + prop["message"] + "</p>\n    </div>\n    <div class=\"change-site\">\n        <a href=" + prop["url"] + ">" + prop["btn_message"] + "</a>\n    </div>\n    <div class=\"reject-message\">\n        <button></button>\n    </div>\n</div>");
-        // buttonの値とデザインを変えられるようにした方がいいかも
-        var div_change_site = body.getElementsByTagName("div")[2]; // reject-messageのDOMを抽出
+        var lang_select = document.getElementsByClassName("lang-select")[0];
+        var div_change_site = lang_select.getElementsByTagName("div")[2]; // reject-messageのDOMを抽出
         div_change_site === null || div_change_site === void 0 ? void 0 : div_change_site.addEventListener('click', function () { _this.reject_recomend_event(); }); // clickイベント this.reject_recomend_eventを追加
     };
     // ブラウザの第一言語が一致するプロパティがあるかどうかを探索する
@@ -54,10 +54,10 @@ var LangSelect = /** @class */ (function () {
     };
     // 表示されているhtmlを除去するメソッド
     LangSelect.prototype.remove_lang_select = function () {
-        var body = document.getElementsByTagName("body")[0];
-        // div class="lang-select"内の子要素を全て削除
-        while (body === null || body === void 0 ? void 0 : body.firstChild)
-            body.removeChild(body.firstChild);
+        var _a;
+        var lang_select = document.getElementsByClassName("lang-select")[0];
+        // 作成した<div class="lang-select">要素を全て削除
+        (_a = lang_select === null || lang_select === void 0 ? void 0 : lang_select.parentNode) === null || _a === void 0 ? void 0 : _a.removeChild(lang_select);
     };
     // 提案の消去ボタンが押されたとき呼び出されるメソッド
     LangSelect.prototype.reject_recomend_event = function () {

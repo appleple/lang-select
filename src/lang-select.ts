@@ -38,9 +38,10 @@ class LangSelect {
         <button></button>
     </div>
 </div>`);
-        // buttonの値とデザインを変えられるようにした方がいいかも
 
-        const div_change_site: HTMLDivElement | undefined = body.getElementsByTagName("div")[2]; // reject-messageのDOMを抽出
+        const lang_select: Element | null = document.getElementsByClassName("lang-select")[0];
+
+        const div_change_site: HTMLDivElement | undefined = lang_select.getElementsByTagName("div")[2]; // reject-messageのDOMを抽出
         div_change_site?.addEventListener('click', ()=>{this.reject_recomend_event()}); // clickイベント this.reject_recomend_eventを追加
     }   
 
@@ -80,10 +81,10 @@ class LangSelect {
 
     // 表示されているhtmlを除去するメソッド
     private remove_lang_select(): void {
-        const body: HTMLElement | null = document.getElementsByTagName("body")[0];
+        const lang_select: Element | null = document.getElementsByClassName("lang-select")[0];
 
-        // div class="lang-select"内の子要素を全て削除
-        while (body?.firstChild) body.removeChild(body.firstChild);
+        // 作成した<div class="lang-select">要素を全て削除
+        lang_select?.parentNode?.removeChild(lang_select);
     }
 
     // 提案の消去ボタンが押されたとき呼び出されるメソッド
