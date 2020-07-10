@@ -34,7 +34,7 @@ If a visitor is browsing the site written in not his/her first language and Lang
     <div class="change-site">
       <button onclick="http://example.com">message on button</button>
     </div>
-    <div class="reject-message">
+    <div class="reject-button">
       <button></button>
     </div>
   </div>
@@ -67,7 +67,7 @@ If a visitor is browsing the site written in not visitor's first language and he
     <div class="change-site">
       <button onclick="../ja/index.html">クリック</button>
     </div>
-    <div class="reject-message">
+    <div class="reject-button">
       <button></button>
     </div>
   </div>

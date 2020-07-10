@@ -1,38 +1,47 @@
 .lang-select{
     position: fixed; /* 要素の位置を固定する */
     bottom: 0; /* 基準の位置を画面の一番下に指定する */
-    left: 0;
-    width: 100%;
-    padding-top: 10px;
-    padding-left: 15vw;
-    padding-bottom: 10px;
     background-color: black;
+    width: 100%;
     animation: SlideIn 1s;
+    text-align: initial;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 50px;
+    grid-template-areas: 
+        "areaA areaB areaC";
+}
+.lang-select p {
+    margin: 0;
 }
 
 .lang-select .message {
-    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    grid-area: areaA;
+    text-align: right;
     color: white;
-    margin-right: 50px;
-    text-align: left;
+    float: right;
 }
 
 .lang-select .change-site {
-    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5vw;
+    grid-area: areaB;
     display: block;
-    padding-top: 16px;
-    margin-right: 10px;
 }
 
-.lang-select .reject-message {
-    padding-top: 16px;
+.lang-select .reject-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    grid-area: areaC;
 }
 
 .lang-select a {
     color: white;
 }
-
-.reject-message {
+.reject-button {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
@@ -40,8 +49,8 @@
 	border: 1px solid rgba(0,0,0,.1);
 	cursor: pointer;
 }
-.reject-message button::before,
-.reject-message button::after {
+.reject-button button::before,
+.reject-button button::after {
 	display: block;
 	content: "";
 	position: absolute;
@@ -52,10 +61,10 @@
 	margin: -8% 0 0 -42%;
 	background: white;
 }
-.reject-message button::before {
+.reject-button button::before {
 	transform: rotate(-45deg);
 }
-.reject-message button::after {
+.reject-button button::after {
 	transform: rotate(45deg);
 }
 
@@ -93,5 +102,35 @@ body {
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+}
+
+@media (max-width: 767px) {
+    .lang-select{
+        position: fixed; /* 要素の位置を固定する */
+        bottom: 0; /* 基準の位置を画面の一番下に指定する */
+        background-color: black;
+        width: 100%;
+        animation: SlideIn 1s;
+        text-align: initial;
+        display: grid;
+        grid-template-rows: 20px;
+        grid-template-columns: 90vw 1fr;
+        grid-template-areas: 
+            "areaA areaC"
+            "areaB areaC";
+    }
+    .lang-select p{
+        font-size: 13px;
+    }
+    .lang-select a{
+        font-size: 13px;
+    }
+    .lang-select .message {
+        margin-left: 5vw;
+        text-align: left;
+    }
+    .lang-select .change-site {
+        margin-left: 5vw;
     }
 }

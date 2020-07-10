@@ -34,14 +34,14 @@ class LangSelect {
     <div class=\"change-site\">
         <a href=${prop["url"]}>${prop["btn_message"]}</a>
     </div>
-    <div class=\"reject-message\">
+    <div class=\"reject-button\">
         <button></button>
     </div>
 </div>`);
 
         const lang_select: Element | null = document.getElementsByClassName("lang-select")[0];
 
-        const div_change_site: HTMLDivElement | undefined = lang_select.getElementsByTagName("div")[2]; // reject-messageのDOMを抽出
+        const div_change_site: HTMLDivElement | undefined = lang_select.getElementsByTagName("div")[2]; // reject-buttonのDOMを抽出
         div_change_site?.addEventListener('click', ()=>{this.reject_recomend_event()}); // clickイベント this.reject_recomend_eventを追加
     }   
 

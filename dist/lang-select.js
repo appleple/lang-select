@@ -15,9 +15,9 @@ var LangSelect = /** @class */ (function () {
         var _this = this;
         var body = document.getElementsByTagName("body")[0]; // id名で要素を抽出
         // HTML挿入
-        body === null || body === void 0 ? void 0 : body.insertAdjacentHTML("beforeend", "\n<div class=\"lang-select\">\n    <div class=\"message\">\n        <p>" + prop["message"] + "</p>\n    </div>\n    <div class=\"change-site\">\n        <a href=" + prop["url"] + ">" + prop["btn_message"] + "</a>\n    </div>\n    <div class=\"reject-message\">\n        <button></button>\n    </div>\n</div>");
+        body === null || body === void 0 ? void 0 : body.insertAdjacentHTML("beforeend", "\n<div class=\"lang-select\">\n    <div class=\"message\">\n        <p>" + prop["message"] + "</p>\n    </div>\n    <div class=\"change-site\">\n        <a href=" + prop["url"] + ">" + prop["btn_message"] + "</a>\n    </div>\n    <div class=\"reject-button\">\n        <button></button>\n    </div>\n</div>");
         var lang_select = document.getElementsByClassName("lang-select")[0];
-        var div_change_site = lang_select.getElementsByTagName("div")[2]; // reject-messageのDOMを抽出
+        var div_change_site = lang_select.getElementsByTagName("div")[2]; // reject-buttonのDOMを抽出
         div_change_site === null || div_change_site === void 0 ? void 0 : div_change_site.addEventListener('click', function () { _this.reject_recomend_event(); }); // clickイベント this.reject_recomend_eventを追加
     };
     // ブラウザの第一言語が一致するプロパティがあるかどうかを探索する
